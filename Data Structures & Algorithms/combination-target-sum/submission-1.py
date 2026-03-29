@@ -1,0 +1,38 @@
+class Solution:
+    def combinationSum(self, nums: List[int], target: int) -> List[List[int]]:
+        #Attempt 2
+        res=[]
+        def dfs(i,curr,cnt):
+            print(i,cnt)
+            if i>=len(nums):
+                return
+            if cnt>target:
+                return 
+            if cnt==target:
+                res.append(curr.copy())
+                return
+            curr.append(nums[i])
+            dfs(i,curr,cnt+nums[i])
+            curr.pop()
+            dfs(i+1,curr,cnt)
+
+        dfs(0,[],0)
+        return res
+        
+        #Attempt 1
+        '''final=[]
+        res= []
+        subset=[]
+        def backtrack(i):
+            if i>=len(nums):
+                res.append(subset[:])
+                return
+            subset.append(nums[i])
+            backtrack(i+1)
+            subset.pop()
+            backtrack(i+1)
+        backtrack(0)
+        for i in res:
+            if sum(i)==target:
+                final+=[i]
+        return final'''
