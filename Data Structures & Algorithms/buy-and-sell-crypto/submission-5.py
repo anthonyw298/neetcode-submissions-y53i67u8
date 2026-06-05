@@ -1,0 +1,192 @@
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        best = l = 0
+        for r in range(len(prices)):
+            if prices[r] - prices[l] < 0:
+                l = r
+            else:
+                best = max(best, prices[r] - prices[l])
+        return best
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        '''
+            globalMax = 0
+            p = float('inf')
+            for num in prices:
+                if num - p < 0:
+                    p = num
+                else:
+                    globalMax = max(globalMax, num - p)
+            return globalMax'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''profit = 0
+        l = 0
+        for r in range(len(prices)):
+            if prices[r] - prices[l] < 0:
+                l = r
+            else:
+                profit = max(profit, prices[r] - prices[l])
+        return profit'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''#Attempt 2
+        l,res= 0,0
+        for r in range(1,len(prices)):
+            print(l,r)
+            if prices[l]-prices[r]>0:
+                l=r
+            else:
+                res=max(res,prices[r]-prices[l])
+        return res'''
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        #Attempt 1
+'''r=0
+        l=0
+        res=0
+        while r<len(prices):
+            print(r,l)
+            #if its negative then l=r
+            if prices[r]-prices[l]<=0:
+                l=r
+            else:
+                if res<=prices[r]-prices[l]:
+                    res=prices[r]-prices[l]
+            r+=1
+        return res'''
